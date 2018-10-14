@@ -15,3 +15,15 @@ code {
 .active {
 	border-bottom: 2px solid #000;
 }
+
+.home .post img {
+  position: absolute;
+  top: 20px;
+  left: -100px;
+  opacity: 0.4;
+}
+
+.home .post {
+  overflow: hidden;
+  padding-left: 80px;
+}

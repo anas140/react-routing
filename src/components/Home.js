@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
+import pokeBall from '../pokeball.png'
 
 class Home extends Component{
 	state = {
@@ -21,7 +23,10 @@ class Home extends Component{
 				return (
 					<div className="post card" key={post.id}>
 						<div className="card-content">
-							<span className="card-title">{post.title}</span>
+							<Link to={`/${post.id}`}>
+								<img src={pokeBall} alt="poke ball image"/>
+								<span className="card-title red-text">{post.title}</span>
+							</Link>
 							<p>{post.body}</p>
 						</div>
 					</div>
@@ -31,9 +36,9 @@ class Home extends Component{
 			<p>No Posts found Yet</p>
 		);
 		return (
-			<div className="container">
+			<div className="home container">
 			<h4 className="center">Posts</h4>		
-			{postList}
+				{postList}
 			</div>
 		)
 	}
